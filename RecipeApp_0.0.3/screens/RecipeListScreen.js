@@ -5,21 +5,29 @@ import Header from '../components/Header'
 import Constants from "expo-constants";
 import SearchFilter from '../components/SearchFilter';
 import CategoriesFilter from '../components/CategoriesFilter';
+import RecipeCard from '../components/RecipeCard';
 
 const RecipeListScreen = () => {
   return (
     <SafeAreaView style={styles.screen}>
       {/* header szoveg + a csengo ikon */}
-      <Header headerText={"Hi, John"} headerIcon={"bell-o"} />
+      <Header headerText={"Hi, User"} headerIcon={"bell-o"} />
       {/* importalt SearchFilter aminek atadjuk majd a placehorderjet propsba */}
       <SearchFilter icon="search" placehorder={"enter your favourite recipe"} />
-
-      {/* kategória filterezés */}
-      <View>
-        <Text style={styles.categoriesTextStyle}>Categories</Text>
+      {/* kategoria filter */}
+      <View style={{ marginTop: 22 }}>
+        <Text style={styles.kategoriaTextStyle}>Categories</Text>
+        {/* kategoria listazasa */}
+        <CategoriesFilter />
       </View>
-      {/* kategória lista */}
-      <CategoriesFilter/>
+
+      {/* recept lista filrer */}
+
+      <View style={{ marginTop: 22, flex: 1 }}>
+        <Text style={styles.kategoriaTextStyle}>Recipes</Text>
+        {/* receptek listazasa */}
+        <RecipeCard />
+      </View>
     </SafeAreaView>
   )
 }
@@ -32,8 +40,8 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 16,//k;t oldalt behuzza a szeletol a margot
   },
-  categoriesTextStyle: {
+  kategoriaTextStyle: {
     fontSize: 22,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   }
 })

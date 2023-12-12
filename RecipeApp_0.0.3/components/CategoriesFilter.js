@@ -1,16 +1,19 @@
-import React from "react";
-import { StyleSheet, View, Text, ScrollView } from "react-native";
-import Constant, { categories, colors } from '../screens/Constant' //tombok beimportalasa
-
+import { ScrollView, StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { categories, colors } from '../screens/Constant'
 const CategoriesFilter = () => {
+    const categoriesListazasStyle = {
+    }
     return (
         <View>
-            <ScrollView horizontal>
+            {/* horizontalis legyen a menu es  */}
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} >
                 {categories.map((category, index) => {
                     return (
-                        //kategóriák kilistázása
-                        <View style={styles.categoruesTombokStyle}>
-                            <Text>{category.category}</Text>
+                        //ketto stilus van hozzaadva, az egyik lokalisan, a masik meghivva
+                        <View style={[styles.categoriesListazasStyle, { backgroundColor: index == 0 ? colors.COLOR_PRIMARY : colors.COLOR_LIGHT }]} >
+
+                            <Text style={[styles.categoriesTextStyle, { color: index === 0 && colors.COLOR_LIGHT }]}>{category.category}</Text>
                         </View>
                     )
                 })}
@@ -19,17 +22,22 @@ const CategoriesFilter = () => {
     )
 }
 
-export default CategoriesFilter;
+export default CategoriesFilter
 
 const styles = StyleSheet.create({
-    categoruesTombokStyle:{
-        backgroundColor: colors.COLOR_PRIMARY,
-        marginRight:36,
-        borderRadius:8,
-        paddingHorizontal:16,
+    categoriesListazasStyle: {
+        marginRight: 36,
+        borderRadius: 8,
+        paddingHorizontal: 16,
         paddingVertical: 18,
-        shadowColor:"#000",
-        shadowOffset:{width:0, height:4}
-        
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.1,
+        shadowRadius: 7,
+        marginVertical: 16
+    },
+    categoriesTextStyle: {
+        fontSize: 18,
+        textTransform: "capitalize",
     }
 })
