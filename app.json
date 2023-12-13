@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "RecipeApp",
+    "slug": "recipeapp",
+    "privacy": "public",
+    "description": "mukod te gyasz",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8664a341-067a-4afd-b769-39ec6015c7cb"
+      }
+    },
+    "owner": "kaszonyikrisztian"
+  }
+}
